@@ -1,12 +1,19 @@
-import './output.css'
+import "./output.css";
+import List from "./components/ListUp";
+import CreateNewList from "./components/CreateList";
+import { CarPartContextProvider } from "./components/CarPartContext"; // Oppdater med kontekstprovider
+import Header from "./components/header";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline color-blue">Rudy skal selge delbil</h1>
-      <p className="text-green-500">rudy skal selge delbil</p>
-    </>
+    <CarPartContextProvider>
+      <div className="space-y-2 mb-8">
+        <Header />
+        <CreateNewList />
+        <List />
+      </div>
+    </CarPartContextProvider>
   );
 }
 
-export default App
+export default App;
